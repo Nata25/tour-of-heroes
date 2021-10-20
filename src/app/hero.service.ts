@@ -35,7 +35,7 @@ export class HeroService {
   getHeroById(id: Number): Observable<Hero> {
     return this.http.get<Hero>(`${this.heroesUrl}/${id}`)
     .pipe(
-      tap(_ => this.messageService.add(`HeroService: fetched hero id=${id}`)),
+      tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>('get hero by id'))
     )
   }
@@ -45,6 +45,14 @@ export class HeroService {
     .pipe(
       tap(_ => this.log(`saving hero id=${hero?.id}`)),
       catchError(this.handleError<any>('saving hero'))
+    )
+  }
+
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions)
+    .pipe(
+      tap((data: Hero) => this.log(`adding new hero with id=${data.id}`)),
+      catchError(this.handleError<Hero>('adding new hero'))
     )
   }
 
