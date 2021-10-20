@@ -64,6 +64,21 @@ export class HeroService {
     )
   }
 
+  searchHeroes(query: string): Observable<Hero[]> {
+    if (!query.trim()) return of([])
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${query}`)
+    .pipe(
+      tap(heroes => {
+        if (heroes.length) {
+          this.log(`found ${heroes.length} heroes by query=${query}`)
+        } else {
+          this.log(`nothing found by query=${query}`)
+        }
+      }),
+      catchError(this.handleError<Hero[]>('search heroes', []))
+    )
+  } 
+
   private handleError<T>(operation: string, result?: T) {
     return (error: any): Observable<T> => {
       console.log(`Error on ${operation}: ${error}`);
