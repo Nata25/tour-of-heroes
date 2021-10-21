@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 import { HeroService } from '../hero.service';
-import { IHero } from '../hero';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-hero-details',
@@ -11,7 +11,7 @@ import { IHero } from '../hero';
   styleUrls: ['./hero-details.component.scss']
 })
 export class HeroDetailsComponent implements OnInit {
-  hero?: IHero;
+  hero?: Hero;
 
   constructor(
     private route: ActivatedRoute,

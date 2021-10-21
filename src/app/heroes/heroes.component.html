@@ -5,7 +5,6 @@
 <ul class="heroes">
 	<li
 		*ngFor="let hero of heroes"
-		[class.selected]="hero === selectedHero"
 		(click)="onSelect(hero)"
 	>
 		<span class="badge">{{hero.id}}</span>
@@ -19,7 +18,6 @@
   <label for="new-hero">Hero name: </label>
   <input id="new-hero" #heroName />
 
-  <!-- (click) passes input value to add() and then clears the input -->
   <button class="add-button" (click)="addHero(heroName.value); heroName.value=''">
     Add hero
   </button>

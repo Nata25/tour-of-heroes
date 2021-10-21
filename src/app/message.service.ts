@@ -10,7 +10,7 @@ export class MessageService {
   messages: string[] = [];
   
   add(message: string): void {
-    this.messages.push(message);
+    this.messages.unshift(message);
   }
 
   clear (): void {

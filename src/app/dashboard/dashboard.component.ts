@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHero } from '../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
-  heroes: IHero[] = []
+  heroes: Hero[] = []
 
   ngOnInit(): void {
     this.heroService.getHeroes().subscribe(heroes => {
