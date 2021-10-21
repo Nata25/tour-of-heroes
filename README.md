@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
-Implementing [Tour of Heroes](https://angular.io/tutorial).
+Sample app implementing [Tour of Heroes](https://angular.io/tutorial) and [Tempalte-driven form](https://angular.io/guide/forms) from **Angular.io** tutorials.
 
 ## Development server
 
