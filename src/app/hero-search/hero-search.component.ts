@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { HeroService } from '../hero.service';
-import { Hero } from '../hero';
+import { IHero } from '../hero';
 
 @Component({
   selector: 'app-hero-search',
@@ -11,7 +11,7 @@ import { Hero } from '../hero';
 })
 export class HeroSearchComponent implements OnInit {
   private searchTerms = new Subject<string>();
-  heroes$!: Observable<Hero[]>;
+  heroes$!: Observable<IHero[]>;
 
   search(str: string): void {
     this.searchTerms.next(str);
