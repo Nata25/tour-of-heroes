@@ -20,7 +20,11 @@ export class HeroFormComponent implements OnInit {
   onSubmit () {
     this.submitted = true
   }
-  
+
+  newHero() {
+    this.model = new Hero(42, '', '');
+  }
+
   ngOnInit(): void {
   }
 
