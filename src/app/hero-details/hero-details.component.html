@@ -2,9 +2,13 @@
 	<div class="hero-d-buttons">
 		<button
 			(click)="isEditing = !isEditing"
-			class="btn btn-success"
+			[ngClass]="{
+				btn: true,
+				'btn-success': !isEditing,
+				'btn-primary': isEditing
+			}"
 		>
-			{{!isEditing ? 'edit' : 'view'}}
+			{{!isEditing ? 'Edit' : 'View' | uppercase }}
 		</button>
 	</div>
 	<div *ngIf="!isEditing; else editing">

@@ -79,4 +79,6 @@
 			{{ model.power || 'unspecified' }}
 		</div>
 	</div>
+	<br>
+	<button *ngIf="!hero" class="btn btn-primary" (click)="submitted=false">Edit hero</button>
 </div>
