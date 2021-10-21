@@ -1,19 +1,37 @@
 <div>
 	<h1>Hero Form</h1>
-	<form>
+	<form #heroForm="ngForm">
+		{{ model | json }}
 		<div class="form-group">
 			<label for="name">Hero Name</label>
-			<input id="name" class="form-control" required/>
+			<input
+				id="name"
+				[(ngModel)]="model.name"
+				class="form-control"
+				name="name"
+				required
+			/>
 		</div>
 
 		<div class="form-group">
 			<label for="alterEgo">Alter Ego</label>
-			<input id="alterEgo" class="form-control" />
+			<input
+				id="alterEgo"
+				[(ngModel)]="model.alterEgo"
+				name="alterEgo"
+				class="form-control"
+			/>
 		</div>
 
 		<div class="form-group">
 			<label for="power">Hero Power</label>
-			<select id="power" class="form-control" required>
+			<select
+				id="power"
+				[(ngModel)]="model.power"
+				name="power"
+				class="form-control"
+				required
+			>
 				<option *ngFor="let power of powers" [value]="power">{{power}}</option>
 			</select>
 		</div>
