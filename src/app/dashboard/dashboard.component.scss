@@ -22,7 +22,7 @@ a {
   background-color: #3f525c;
   border-radius: 2px;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-decoration: none;
   display: inline-block;
   color: #fff;
@@ -31,6 +31,7 @@ a {
   min-width: 70px;
   margin: .5rem auto;
   box-sizing: border-box;
+  transition: background-color 0.3s;
 
   /* flexbox */
   order: 0;

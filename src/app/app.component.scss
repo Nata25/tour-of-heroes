@@ -11,6 +11,7 @@ nav a {
   background-color: #e8e8e8;
   color: #3d3d3d;
   border-radius: 4px;
+  transition: background-color 0.3s;
 
 	&:last-child {
 		margin-right: 0;
