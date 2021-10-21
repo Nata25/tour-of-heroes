@@ -81,7 +81,7 @@ export class HeroService {
 
   private handleError<T>(operation: string, result?: T) {
     return (error: any): Observable<T> => {
-      console.log(`Error on ${operation}: ${error}`);
+      console.error(`Error on ${operation}: ${error}`);
       return of(result as T);
     }
   }

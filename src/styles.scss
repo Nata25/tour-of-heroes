@@ -24,6 +24,11 @@ body, input[type="text"], button {
   color: #333;
 }
 
+.dimmed {
+	color: #ababab;
+	font-style: italic;
+}
+
 // Forms
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */

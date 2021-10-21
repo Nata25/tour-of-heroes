@@ -16,9 +16,9 @@
 
 <div>
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+  <input id="new-hero" #heroName class="form-control" />
 
-  <button class="add-button" (click)="addHero(heroName.value); heroName.value=''">
+  <button class="btn btn-success" (click)="addHero(heroName.value); heroName.value=''">
     Add hero
   </button>
 </div>

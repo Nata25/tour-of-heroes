@@ -1,0 +1,23 @@
+.hero-d-buttons {
+	margin-top: 0.5em;
+
+	button {
+		margin-right: 0.5em;
+	}
+}
+
+.hero-edit {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+	label {
+		margin-top: 1em;
+		font-size: 1.1em;
+	}
+
+	button {
+		margin-top: 0.5em;
+	}
+
+}

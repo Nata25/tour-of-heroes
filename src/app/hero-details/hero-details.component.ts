@@ -12,6 +12,7 @@ import { Hero } from '../hero';
 })
 export class HeroDetailsComponent implements OnInit {
   hero?: Hero;
+  isEditing: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,

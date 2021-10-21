@@ -35,7 +35,6 @@
 				[(ngModel)]="model.power"
 				name="power"
 				class="form-control"
-				required
 			>
 				<option *ngFor="let power of powers" [value]="power">{{power}}</option>
 			</select>
@@ -49,14 +48,6 @@
 			Submit
 		</button>
 
-		<button
-			type="submit"
-			class="btn btn-default"
-			(click)="newHero(); heroForm.reset()"
-		>
-			New Hero
-		</button>
-
 	</form>
 </div>
 
@@ -68,12 +59,24 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-3">Alter Ego</div>
-		<div class="col-xs-9">{{ model.alterEgo }}</div>
+		<div
+			[ngClass]="{
+				'col-xs-9': true,
+				'dimmed': !model.alterEgo
+			}"
+		>
+			{{ model.alterEgo || 'unspecified' }}
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-3">Power</div>
-		<div class="col-xs-9">{{ model.power }}</div>
+		<div
+			[ngClass]="{
+				'col-xs-9': true,
+				'dimmed': !model.power
+			}"
+		>
+			{{ model.power || 'unspecified' }}
+		</div>
 	</div>
-	<br>
-	<button class="btn btn-primary" (click)="submitted=false">Edit</button>
 </div>

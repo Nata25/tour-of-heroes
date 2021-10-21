@@ -1,9 +1,53 @@
 <div *ngIf="hero">
-	<h3>{{ hero.name | uppercase }} Details</h3>
-	<p>
-		<label for="name">Hero's name:</label>
+	<div class="hero-d-buttons">
+		<button
+			(click)="isEditing = !isEditing"
+			class="btn btn-success"
+		>
+			{{!isEditing ? 'edit' : 'view'}}
+		</button>
+	</div>
+	<div *ngIf="!isEditing; else editing">
+		<h3>{{ hero.name | uppercase }} Details</h3>
+		<div class="row">
+			<div class="col-xs-3">Name</div>
+			<div class="col-xs-9">{{ hero.name }}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Alter Ego</div>
+			<div
+				[ngClass]="{
+					'col-xs-9': true,
+					'dimmed': !hero.alterEgo
+				}"
+			>
+			{{ hero.alterEgo || 'unspecified' }}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Power</div>
+			<div
+				[ngClass]="{
+					'col-xs-9': true,
+					'dimmed': !hero.power
+				}"
+			>
+				{{ hero.power || 'unspecified' }}
+			</div>
+		</div>
+	</div>
+
+	<div class="hero-edit">
+		<label for="name">Edit quickly hero's name:</label>
 		<input [(ngModel)]="hero.name" placeholder="name"/>
-	</p>
-	<button (click)="goBack()">go back</button>
-	<button (click)="save()">save</button>
+		<button
+			class="btn btn-primary"
+			[disabled]="!hero.name"
+			(click)="save()"
+		>
+			Submit
+		</button>
+	</div>
+	<ng-template #editing>
+		<app-hero-form [hero]="hero"></app-hero-form>
+	</ng-template>
 </div>
